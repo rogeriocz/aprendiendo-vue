@@ -1,7 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
 
-  <Counter />
+  <Counter title='Batman'/>
+  
+  <Counter start="15"/>
   
 </template>
 
