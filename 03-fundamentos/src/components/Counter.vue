@@ -1,5 +1,5 @@
 <template>
-  <h2>{{title || 'Counter'}}</h2>
+  <h2>{{customTitle}}</h2>
   <p>{{counter}} <sup>2</sup> = {{squareCounter}} </p>
   <div>
     <button @click="increase">+1</button>
@@ -9,7 +9,18 @@
 
 <script>
 export default {
-  props: ['title', 'start'],
+  props: {
+    title: String,
+    start: {
+      type: Number,
+      required: true,
+      default: 10
+    },
+    validator(value){
+      return value >= 0
+    }
+  },
+  
   data() {
     return {
       counter: this.start
@@ -35,7 +46,7 @@ export default {
       return this.counter * this.counter
     },
     customTitle() {
-
+      return this.title || 'Counter'
     }
   }
 }

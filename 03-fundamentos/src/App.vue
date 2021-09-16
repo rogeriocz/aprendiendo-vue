@@ -1,9 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
 
-  <Counter title='Batman'/>
+  <Counter v-bind:start="9" title='Batman'/>
   
-  <Counter start="15"/>
+  <Counter :start="10"/>
   
 </template>
 
